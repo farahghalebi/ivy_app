@@ -8,3 +8,14 @@ $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
+$purple: #b19cd9;
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "purple": $purple
+  )
+);

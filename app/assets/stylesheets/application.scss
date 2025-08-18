@@ -3,10 +3,35 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-// External libraries
 @import "bootstrap";
+
+// External libraries
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// 2. Extend the Bootstrap theme map
+.btn-purple {
+  background-color: #8b71bc;   // Bootstrap’s “purple” shade
+  color: white;
+  font-weight: 500;
+
+  // Shadow for depth
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+
+  // Smooth hover effect
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background-color: darken(#6f42c1, 10%);
+    color: white;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+
+  &:active {
+    background-color: darken(#6f42c1, 15%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  }
+}
