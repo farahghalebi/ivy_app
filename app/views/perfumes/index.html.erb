@@ -2,9 +2,12 @@
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia possimus doloribus ab numquam voluptas dolores nobis amet sunt commodi, hic similique iste eligendi cum eaque quos vel sed error corrupti.</p>
 
 <ul>
-  <%= @perfumes.each do |perfume| %>
+  <% @perfumes.each do |perfume| %>
     <li>
-      <%= perfume %>
+      <h4><%= perfume.name %></h4>
+      <p><%= perfume.description %></p>
+      <p><%= perfume.category %></p>
+      <a href="<% perfume.url %>"> website </a>
     </li>
   <% end %>
 </ul>
