@@ -1,4 +1,5 @@
 class PerfumesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show] # remove later, needed for show page
 
   def index
     @perfumes = Perfume.all
