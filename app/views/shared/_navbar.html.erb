@@ -36,7 +36,7 @@
             <a class="nav-link dropdown-toggle d-flex align-items-center p-0" href="#"
                id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="avatar me-2" alt="Profile"
-                   src="<%= current_user&.avatar_url.presence || asset_path('logo.png') %>">
+                   src="<%= asset_path('logo.png') %>">
               <span class="d-none d-lg-inline"><%= current_user.try(:email) || "Profile" %></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">

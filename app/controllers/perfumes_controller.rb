@@ -24,7 +24,7 @@ class PerfumesController < ApplicationController
   def create
     @perfume = Perfume.new(perfume_params)
     if @perfume.save
-      redirect_to @perfume, notice: "Perfume created successfully."
+      redirect_to perfume_path(@perfume), notice: "Perfume created successfully."
     else
       render :new, status: :unprocessable_entity
     end
