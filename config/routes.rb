@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   # Perfumes: index/show/new/create/destroy
   resources :perfumes, only: [:index, :show, :new, :create, :destroy] do
     # Start a chat tied to a specific perfume (POST /perfumes/:perfume_id/chats)
-    resources :chats, only: [:create]
+    resources :chats, only: [:new, :create, :show]
   end
 
   # Chats: list and show past conversations
-  resources :chats, only: [:index, :show] do
+  resources :chats, only: [:index] do
     # Messages within a chat
     # GET  /chats/:chat_id/messages  -> messages#index (messages in that chat)
     # POST /chats/:chat_id/messages  -> messages#create

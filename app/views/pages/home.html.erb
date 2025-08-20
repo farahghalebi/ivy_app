@@ -1,15 +1,23 @@
-
 <!-- app/views/pages/home.html.erb -->
-<div class="container py-5">
-  <div class="row justify-content-center text-center">
-    <div class="col-12 col-lg-8">
-      <h1 class="display-5 fw-bold mb-3">Welcome to your scent wardrobe</h1>
-      <p class="lead mb-4">your personal fragrance stylist at your service</p>
-      <% if user_signed_in? %>
-        <%= link_to "Go to Dashboard", "#", class: "btn btn-primary btn-lg" %>
-      <% else %>
-      <%= link_to "Get started", new_user_registration_path, class: "btn btn-purple btn-lg me-2" %>
-      <% end %>
+<div class="home-page">
+  <div class="overlay"></div>
+  <div class="container py-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 col-lg-8">
+        <h1 class="display-5 fw-bold mb-3">Scent Magpie</h1>
+        <h2 class="h3 fw-normal mb-4">
+          Chat, chirp, and clutter as a perfume connoisseur
+        </h2>
+        <p class="lead mb-4">
+          Organize your scent wardrobe, explore your collection, and share the fragrances that inspire you
+        </p>
+
+        <% if user_signed_in? %>
+          <%= link_to "Go to Dashboard", "#", class: "btn btn-primary btn-lg" %>
+        <% else %>
+          <%= link_to "Let's start", new_user_registration_path, class: "btn btn-sage btn-lg me-2" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
