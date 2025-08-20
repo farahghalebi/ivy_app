@@ -1,10 +1,18 @@
 <h1>Scent Wardrobe</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia possimus doloribus ab numquam voluptas dolores nobis amet sunt commodi, hic similique iste eligendi cum eaque quos vel sed error corrupti.</p>
 
-<ul>
-  <%= @perfumes.each do |perfume| %>
-    <li>
-      <%= perfume %>
+<ul class='list-unstyled'>
+  <% @perfumes.each do |perfume| %>
+    <li class='mb-3'>
+      <%= link_to perfume_path(perfume.id), class: "card bg-white text-decoration-none text-dark" do %>
+        <div class="card-body">
+          <h4 class="card-title"><%= perfume.name %></h4>
+          <p class="card-text"><%= perfume.description %></p>
+          <p class="card-subtitle text-muted"><%= perfume.category %></p>
+          (id: <%= perfume.id %>)
+        </div>
+      <% end %>
+      <a href="<% perfume.url %>"> click here to buy </a>
     </li>
   <% end %>
 </ul>
