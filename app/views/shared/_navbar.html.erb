@@ -1,38 +1,57 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <!-- Brand -->
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+      <img src="<%= asset_path('logo.png') %>" alt="Ivy Parfumerie" class="brand-logo me-2">
+      <span class="fw-semibold">Ivy Parfumerie</span>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <!-- Left: primary nav -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="<%= root_path %>">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="<%= perfumes_path %>">Perfumes</a></li>
+
+        <!-- Create new perfume as a purple button -->
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-primary" href="<%= new_perfume_path %>">Create New Perfume</a>
+        </li>
+
+        <li class="nav-item ms-lg-2"><a class="nav-link" href="<%= chats_path %>">Chats</a></li>
+        <li class="nav-item"><a class="nav-link" href="<%= messages_path %>">Messages</a></li>
+      </ul>
+
+      <!-- Right: auth/profile -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+            <a class="nav-link dropdown-toggle d-flex align-items-center p-0" href="#"
+               id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="avatar me-2" alt="Profile"
+                   src="<%= current_user&.avatar_url.presence || asset_path('logo.png') %>">
+              <span class="d-none d-lg-inline"><%= current_user.try(:email) || "Profile" %></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <!-- Devise settings page works as Profile -->
+              <li><a class="dropdown-item" href="<%= edit_user_registration_path %>">Profile / Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "Log out", destroy_user_session_path,
+                              data: { turbo_method: :delete }, class: "dropdown-item" %></li>
+            </ul>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="<%= new_user_session_path %>">Sign in</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-primary" href="<%= new_user_registration_path %>">Sign up</a></li>
         <% end %>
       </ul>
     </div>
   </div>
-</div>
+</nav>

@@ -11,6 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+// app/assets/stylesheets/application.scss
+@import "components/navbar";
+
 
 // 2. Extend the Bootstrap theme map
 .btn-purple {
