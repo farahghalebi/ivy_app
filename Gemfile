@@ -53,12 +53,15 @@ gem "sassc-rails"
 # adds gem "device"
 gem 'devise'
 
+
+gem "ruby_llm"
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 end
-gem "ruby_llm"
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
