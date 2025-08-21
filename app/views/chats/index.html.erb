@@ -1,5 +1,5 @@
 <h1>Chats for <%= @perfume.name %></h1>
-
+<h3>Chats History:</h3>
 <div class="mb-4">
   <% if @chats.any? %>
     <ul>
@@ -15,3 +15,5 @@
 <%= simple_form_for [@perfume, @chat] do |f| %>
   <%= f.button :submit, "New chat", class: "btn btn-primary" %>
 <% end %>
+
+<%= link_to "← Back", perfume_path(@perfume), class: "btn btn-secondary mt-3 ms-2"  %>

@@ -1,5 +1,4 @@
 <h1>Chat about <%= @chat.perfume.name %></h1>
-<%= link_to "← Back", perfume_chats_path(@chat.perfume) %>
 
 <div id="chat_title">
   <h1><%= @chat.title %></h1>
@@ -29,3 +28,5 @@
     <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
   <% end %>
 </div>
+
+<%= link_to "← Back", perfume_chats_path(@chat.perfume), class: "btn btn-secondary mt-3 ms-2"  %>
