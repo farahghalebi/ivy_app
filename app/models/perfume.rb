@@ -1,5 +1,7 @@
 # app/models/perfume.rb
 class Perfume < ApplicationRecord
+  has_many :chats, dependent: :destroy
+  
   CATEGORIES = [
     "Parfum",
     "Extrait de Parfum",
