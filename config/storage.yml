@@ -6,9 +6,15 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>  # This creates separate folders for dev/test/production
+
 cloudinary:
   service: Cloudinary
-  folder: <%= Rails.env %>   # This creates separate folders for dev/test/production
+  cloud_name: <%= Rails.application.credentials.dig(:cloudinary, :cloud_name) %>
+  api_key:    <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
+  api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
 
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)

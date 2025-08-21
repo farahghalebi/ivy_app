@@ -11,6 +11,9 @@ class Perfume < ApplicationRecord
   #   "Eau Fraîche",
   #   "Body Mist"
   # ].freeze
+
+  has_one_attached :photo
+
   validates :name, presence: true
   # validates :category, inclusion: { in: CATEGORIES }
   validates :category, presence: true

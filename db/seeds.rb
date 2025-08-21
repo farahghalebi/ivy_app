@@ -18,11 +18,11 @@
 puts "Cleaning database..."
 Perfume.destroy_all
 
-puts "Seeding perfumes..."
+puts "Preparing perfumes data..."
 
-Perfume.create!([
+perfumes_data = [
   {
-    name: "Chanel No. 5",
+    name: "No. 5",
     brand: "Chanel",
     category: "Floral Aldehydic",
     description: "Chanel No. 5 is the embodiment of elegance and femininity, a scent that has captivated generations. Its sparkling aldehydic top notes mingle with a lush bouquet of rose, jasmine, and ylang-ylang, grounded in the sensual warmth of sandalwood. Wearing it is like stepping into a timeless, sophisticated world, where every movement leaves a whisper of refinement.",
@@ -32,7 +32,7 @@ Perfume.create!([
     filename: "chanel_no5.png"
   },
   {
-    name: "Byredo Rose of No Man’s Land",
+    name: "Rose of No Man’s Land",
     brand: "Byredo",
     category: "Floral",
     description: "Rose of No Man’s Land is a delicate yet audacious floral that celebrates the fearless spirit. Notes of rose, pink pepper, and red berries create a bright, uplifting aroma, perfect for a fragrance connoisseur who delights in subtle strength and charm. Each spray is like a poetic whisper of romance and resilience.",
@@ -42,7 +42,7 @@ Perfume.create!([
     filename: "byredo_rose_of_no_mans_land.png"
   },
   {
-    name: "Diptyque Orphéon",
+    name: "Orphéon",
     brand: "Diptyque",
     category: "Floral Woody",
     description: "Orphéon evokes the mysterious allure of Parisian evenings. With subtle florals intertwined with warm woody notes, it envelops the wearer in a narrative of elegance and urban sophistication. It is both intimate and expansive, capturing the artful charm of a bygone era.",
@@ -52,7 +52,7 @@ Perfume.create!([
     filename: "diptyque_orpheon.png"
   },
   {
-    name: "Parfums de Marly Delina – Valaya",
+    name: "Valaya",
     brand: "Parfums de Marly",
     category: "Floral Fruity",
     description: "Delina Valaya is an opulent rose composition that dazzles with pink pepper, lychee, and rhubarb, resting upon a soft, musky base. It is a fragrance for the confident, playful connoisseur, inviting admiration while exuding an effortless charm and romance.",
@@ -62,7 +62,7 @@ Perfume.create!([
     filename: "pdm_valaya.png"
   },
   {
-    name: "Dear Polly Eau de Parfum",
+    name: "Dear Polly",
     brand: "Vilhelm Parfumerie",
     category: "Floral Woody",
     description: "Dear Polly is a contemplative, romantic fragrance blending delicate florals with soft woody undertones. It evokes nostalgia and intimate moments, perfectly suited for those who cherish thoughtful elegance.",
@@ -72,7 +72,7 @@ Perfume.create!([
     filename: "dear_polly.png"
   },
   {
-    name: "Le Labo Santal 33",
+    name: "Santal 33",
     brand: "Le Labo",
     category: "Woody",
     description: "Santal 33 is a cult classic, a signature of refinement. Sandalwood, cardamom, and iris combine to produce a meditative, sensual scent that has become synonymous with minimalist luxury and effortless cool.",
@@ -82,14 +82,14 @@ Perfume.create!([
     filename: "le_labo_santal_33.png"
   },
   {
-    name: "Maison Margiela Replica Jazz Club",
+    name: "Replica Jazz Club",
     brand: "Maison Margiela",
     category: "Oriental Spicy",
     description: "A rich, intoxicating fragrance inspired by smoky jazz clubs. Notes of rum, tobacco, and vanilla create a warm, enveloping aura that evokes nostalgia, intimacy, and elegance.",
     style: "Oriental Spicy, Evening, Warm",
     notes: ["Rum", "Tobacco", "Vanilla"],
     occasion: "Evening, Special Occasion",
-    filename: "/replica_jazz_club.png"
+    filename: "replica_jazz_club.png"
   },
   {
     name: "Thé Matcha 26",
@@ -102,7 +102,7 @@ Perfume.create!([
     filename: "the_matcha_26.png"
   },
   {
-    name: "Armani Privé Thé Yulong",
+    name: "Thé Yulong",
     brand: "Armani Privé",
     category: "Floral",
     description: "A serene and elegant fragrance that captures the essence of Chinese tea rituals. Jasmine and green tea notes float on a base of soft woods, creating a refined and contemplative aura.",
@@ -113,7 +113,7 @@ Perfume.create!([
   },
   {
     name: "When the Rain Stops",
-    brand: "Vilhelm Parfumerie",
+    brand: "Maison Margiela",
     category: "Fresh",
     description: "A crisp, rainy-day scent that evokes the calm after a storm. Wet petals, airy moss, and subtle aquatic notes mingle for a refreshing and tranquil experience.",
     style: "Fresh, Aquatic",
@@ -122,7 +122,7 @@ Perfume.create!([
     filename: "when_the_rain_stops.png"
   },
   {
-    name: "Les Jardins Français - Cresson d'Orient et Persil de Sardaigne",
+    name: "Les Jardins Français",
     brand: "Buly",
     category: "Herbal Floral",
     description: "A playful herbal bouquet combining the sharpness of watercress with the green freshness of Sardinian parsley. Bright, lively, and uplifting.",
@@ -142,7 +142,7 @@ Perfume.create!([
     filename: "naked_dance.png"
   },
   {
-    name: "Chloë Sevigny - Little Flower",
+    name: "Little Flower",
     brand: "Régime des Fleurs",
     category: "Floral",
     description: "A delicate, vintage-inspired bouquet that captures the charm of a secret garden. Light, airy, and irresistibly feminine.",
@@ -162,7 +162,7 @@ Perfume.create!([
     filename: "casa_blanca_bo.png"
   },
   {
-    name: "Phlur Father Figure",
+    name: "Father Figure",
     brand: "Phlur",
     category: "Woody Aromatic",
     description: "A modern, minimalist scent balancing soft woods with fresh citrus and aromatic herbs. Clean yet bold.",
@@ -172,7 +172,7 @@ Perfume.create!([
     filename: "father_figure.png"
   },
   {
-    name: "Tabacco Toscano Eau de Cologne",
+    name: "Tabacco Toscano",
     brand: "Santa Maria Novella",
     category: "Oriental Woody",
     description: "A warm and sophisticated fragrance with rich tobacco leaf accents. Elegant and mature, perfect for contemplative moments.",
@@ -182,8 +182,8 @@ Perfume.create!([
     filename: "tabacco_toscano.png"
   },
   {
-    name: "Liis - Into This World",
-    brand: "Indie",
+    name: "Into This World",
+    brand: "Liis",
     category: "Floral Fruity",
     description: "A poetic fragrance weaving soft fruits with gentle florals, evoking a sense of wonder and exploration.",
     style: "Fruity, Floral, Dreamy",
@@ -203,7 +203,7 @@ Perfume.create!([
   },
   {
     name: "White Rice",
-    brand: "Dannam",
+    brand: "D'Annam",
     category: "Green",
     description: "A minimalist, clean scent reminiscent of fresh rice fields. Crisp, simple, and meditative.",
     style: "Minimalist, Green, Fresh",
@@ -233,7 +233,7 @@ Perfume.create!([
   },
   {
     name: "Delulu",
-    brand: "Oddity",
+    brand: ".Oddity",
     category: "Floral Gourmand",
     description: "A playful, slightly sweet floral fragrance with hints of confectionery and warm woods. Evokes whimsy and lighthearted mischief.",
     style: "Playful, Sweet, Floral",
@@ -251,6 +251,28 @@ Perfume.create!([
     occasion: "Afternoon, Elegant",
     filename: "5_oclock_gingembre.png"
   }
-])
+]
+
+puts "Seeding perfumes..."
+
+perfumes_data.each do |data|
+  perfume = Perfume.create!(
+    name: data[:name],
+    brand: data[:brand],
+    category: data[:category],
+    description: data[:description],
+    style: data[:style],
+    notes: data[:notes],
+    occasion: data[:occasion]
+  )
+
+  # attaches images with active storage
+  file_path = Rails.root.join("app/assets/images/perfumes", data[:filename])
+  if File.exist?(file_path)
+    perfume.photo.attach(io: File.open(file_path), filename: data[:filename])
+  else
+    puts "⚠️ File not found: #{data[:filename]}"
+  end
+end
 
 puts "Seeding completed! #{Perfume.count} perfumes in DB ✅"

@@ -1,28 +1,38 @@
 <!-- app/views/perfumes/index.html.erb -->
-<div class="bg">
-  <h1 class="mb-4 text-center">Scent Wardrobe</h1>
 
-  <div class="row">
-    <% @perfumes.each do |perfume| %>
-      <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
-        <%= link_to perfume_path(perfume), class: "text-decoration-none text-dark" do %>
-          <div class="card perfume-card h-100 shadow-sm position-relative">
+<div class="index-page">
+  <!-- Semi-transparent overlay behind content -->
+  <div class="overlay"></div>
 
-            <!-- Paper background for each card -->
-            <div class="card-bg"></div>
+  <!-- Content container sits on top of overlay -->
+  <div class="container py-5">
+    <h1 class="hero-title mb-4 text-center">Scent Wardrobe</h1>
 
-            <%# <!-- Perfume image on top of background -->
-            <%= image_tag(perfume.url, class: "card-img-top", alt: perfume.name) %>
+    <div class="row justify-content-center g-4">
+      <% @perfumes.each do |perfume| %>
+    <div class="col-auto mb-3">
+      <%= link_to perfume_path(perfume), class: "text-decoration-none text-dark" do %>
+        <div class="card perfume-card h-100 shadow-sm position-relative" style="width: 250px;">
 
-            <!-- Text overlay with name & brand -->
-            <div class="card-body d-flex flex-column justify-content-end align-items-center text-center">
-              <h5 class="card-title"><%= perfume.name %></h5>
-              <p class="card-subtitle text-muted"><%= perfume.brand %></p>
+              <!-- Paper background for each card -->
+              <div class="card-bg">
+                <% if perfume.photo.attached? %>
+                  <div class="image-container">
+                    <%= image_tag url_for(perfume.photo), alt: perfume.name %>
+                  </div>
+                <% end %>
+              </div>
+
+              <!-- Text overlay with name & brand -->
+              <div class="card-body d-flex flex-column justify-content-end align-items-center text-center">
+                <h5 class="card-title"><%= perfume.name %></h5>
+                <p class="card-subtitle text-muted"><%= perfume.brand %></p>
+              </div>
+
             </div>
-
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
