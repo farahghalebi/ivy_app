@@ -26,13 +26,26 @@ class MessagesController < ApplicationController
   end
 
   def instructions
-    "#{@chat.perfume.name} - #{@chat.perfume.description}" #Promt Engineering part here 1. PERSONA 2. CONTEXT 3.CONTENT 4.FORMAT
+    <<~PROMPT
+       1) PERSONA
+      you are a professional fragnace consultant. you tone is tone  "friendly and concise". you explain simplyè, avoid jargon, and keep answers user-friendly.
+      candidate perfume: #{@chat.perfume.name} _ #{@chat.perfume.description}"
+        2) CONTEXT
+        _ Breifly describe the scent profile (top/heart/base notes if known)
+        _ Explain why it fits the occasion and category.
+        _ Give a quick vibe/mood line ( how it feels / who it suits).
+        3) FORMAT
+        _ 3 short sentances max.
+        _ plain language, no bullet point in the final answer.
+        _ End with "Perfect for #{@chat.perfume.occasion}
+
+    PROMPT
   end
 
   def build_messages_history
     @ruby_llm_chat = RubyLLM.chat
     @chat.messages.each do |message|
-      @ruby_llm_chat.add_message({role: message.role, content: message.content})
+      @ruby_llm_chat.add_message({ role: message.role, content: message.content })
     end
   end
 end
