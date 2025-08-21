@@ -1,18 +1,28 @@
-<h1>Scent Wardrobe</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia possimus doloribus ab numquam voluptas dolores nobis amet sunt commodi, hic similique iste eligendi cum eaque quos vel sed error corrupti.</p>
+<!-- app/views/perfumes/index.html.erb -->
+<div class="bg">
+  <h1 class="mb-4 text-center">Scent Wardrobe</h1>
 
-<ul class='list-unstyled'>
-  <% @perfumes.each do |perfume| %>
-    <li class='mb-3'>
-      <%= link_to perfume_path(perfume.id), class: "card bg-white text-decoration-none text-dark" do %>
-        <div class="card-body">
-          <h4 class="card-title"><%= perfume.name %></h4>
-          <p class="card-text"><%= perfume.description %></p>
-          <p class="card-subtitle text-muted"><%= perfume.category %></p>
-          (id: <%= perfume.id %>)
-        </div>
-      <% end %>
-      <a href="<% perfume.url %>"> click here to buy </a>
-    </li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @perfumes.each do |perfume| %>
+      <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-4">
+        <%= link_to perfume_path(perfume), class: "text-decoration-none text-dark" do %>
+          <div class="card perfume-card h-100 shadow-sm position-relative">
+
+            <!-- Paper background for each card -->
+            <div class="card-bg"></div>
+
+            <%# <!-- Perfume image on top of background -->
+            <%= image_tag(perfume.url, class: "card-img-top", alt: perfume.name) %>
+
+            <!-- Text overlay with name & brand -->
+            <div class="card-body d-flex flex-column justify-content-end align-items-center text-center">
+              <h5 class="card-title"><%= perfume.name %></h5>
+              <p class="card-subtitle text-muted"><%= perfume.brand %></p>
+            </div>
+
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

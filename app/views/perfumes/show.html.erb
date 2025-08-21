@@ -7,6 +7,12 @@
     More info
   </a>
 
-  <%= link_to "Chats with OpenAI", perfume_chats_path(@perfume), class: "btn btn-secondary mt-3 ms-2"%>
+  <%= link_to "Back to all perfumes", perfumes_path, class: "btn btn-secondary mt-3 ms-2" %>
 </div>
-  <%= link_to "← Back to all perfumes", perfumes_path, class: "btn btn-secondary mt-3 ms-2" %>
+<div class="d-flex justify-content-end mt-4 me-3">
+  <% if @chat.nil? %>
+    <%= link_to "?", new_perfume_chat_path(@perfume), class: "btn btn-chat" %>
+  <% else %>
+    <%= link_to "?", perfume_chat_path(@perfume, @chat), class: "btn btn-chat" %>
+  <% end %>
+</div>

@@ -29,7 +29,7 @@ Perfume.create!([
     style: "Classic, Elegant, Timeless",
     notes: ["Rose", "Jasmine", "Ylang-Ylang", "Sandalwood", "Aldehydes"],
     occasion: "Evening, Special Occasion",
-    url: "/perfumes/chanel_no5.png"
+    filename: "chanel_no5.png"
   },
   {
     name: "Byredo Rose of No Man’s Land",
@@ -39,7 +39,7 @@ Perfume.create!([
     style: "Floral, Feminine, Elegant",
     notes: ["Rose", "Pink Pepper", "Red Berries"],
     occasion: "Daytime, Romantic",
-    url: "/perfumes/byredo_rose_of_no_mans_land.png"
+    filename: "byredo_rose_of_no_mans_land.png"
   },
   {
     name: "Diptyque Orphéon",
@@ -49,7 +49,7 @@ Perfume.create!([
     style: "Floral Woody, Sophisticated",
     notes: ["Iris", "Violet", "Woody Notes"],
     occasion: "Evening, Casual Chic",
-    url: "/perfumes/diptyque_orpheon.png"
+    filename: "diptyque_orpheon.png"
   },
   {
     name: "Parfums de Marly Delina – Valaya",
@@ -59,7 +59,7 @@ Perfume.create!([
     style: "Floral Fruity, Luxurious",
     notes: ["Rose", "Pink Pepper", "Lychee", "Rhubarb", "Musk"],
     occasion: "Daytime, Special Occasion",
-    url: "/perfumes/pdm_valaya.png"
+    filename: "pdm_valaya.png"
   },
   {
     name: "Dear Polly Eau de Parfum",
@@ -69,7 +69,7 @@ Perfume.create!([
     style: "Floral Woody, Romantic",
     notes: ["Rose", "Violet", "Sandalwood"],
     occasion: "Evening, Special Occasion",
-    url: "/perfumes/dear_polly.png"
+    filename: "dear_polly.png"
   },
   {
     name: "Le Labo Santal 33",
@@ -79,7 +79,7 @@ Perfume.create!([
     style: "Woody, Minimalist, Unisex",
     notes: ["Sandalwood", "Cardamom", "Iris"],
     occasion: "Daytime, Evening, Unisex",
-    url: "/perfumes/le_labo_santal_33.png"
+    filename: "le_labo_santal_33.png"
   },
   {
     name: "Maison Margiela Replica Jazz Club",
@@ -89,17 +89,17 @@ Perfume.create!([
     style: "Oriental Spicy, Evening, Warm",
     notes: ["Rum", "Tobacco", "Vanilla"],
     occasion: "Evening, Special Occasion",
-    url: "/perfumes/replica_jazz_club.png"
+    filename: "/replica_jazz_club.png"
   },
   {
-    name: "Le Labo Thé Matcha 26",
+    name: "Thé Matcha 26",
     brand: "Le Labo",
     category: "Green Tea",
     description: "A meditative fragrance evoking quiet moments of introspection. Creamy fig notes blend with soft vetiver and structured cedar, lifted by a hint of bitter orange. A delicate scent for those close enough to appreciate its subtle charm.",
     style: "Fresh, Green, Aromatic",
     notes: ["Matcha Tea Accord", "Fig", "Vetiver", "Cedar", "Bitter Orange"], # <-- Array
     occasion: "Daytime, Meditative Moments",
-    url: "/perfumes/the_matcha_26.png"
+    filename: "the_matcha_26.png"
   },
   {
     name: "Armani Privé Thé Yulong",
@@ -109,7 +109,7 @@ Perfume.create!([
     style: "Elegant, Floral, Green",
     notes: ["Jasmine", "Green Tea", "Soft Woods"], # <-- Array
     occasion: "Formal Events, Afternoon Tea",
-    url: "/perfumes/the_yulong.png"
+    filename: "the_yulong.png"
   },
   {
     name: "When the Rain Stops",
@@ -119,7 +119,7 @@ Perfume.create!([
     style: "Fresh, Aquatic",
     notes: ["Wet Petals", "Moss", "Aqua Notes"], # <-- Array
     occasion: "Casual, Everyday",
-    url: "/perfumes/when_the_rain_stops.png"
+    filename: "when_the_rain_stops.png"
   },
   {
     name: "Les Jardins Français - Cresson d'Orient et Persil de Sardaigne",
@@ -129,7 +129,7 @@ Perfume.create!([
     style: "Herbal, Fresh, Green",
     notes: ["Watercress", "Parsley", "Green Leaves"],
     occasion: "Daytime, Spring & Summer",
-    url: "/perfumes/cresson_persil.png"
+    filename: "cresson_persil.png"
   },
   {
     name: "Naked Dance",
@@ -139,7 +139,7 @@ Perfume.create!([
     style: "Sensual, Warm, Floral",
     notes: ["Jasmine", "Amber", "Vanilla"],
     occasion: "Evening, Romantic",
-    url: "/perfumes/naked_dance.png"
+    filename: "naked_dance.png"
   },
   {
     name: "Chloë Sevigny - Little Flower",
@@ -149,17 +149,17 @@ Perfume.create!([
     style: "Soft, Floral, Romantic",
     notes: ["Rose", "Lily", "Peony", "Green Accord"],
     occasion: "Daytime, Spring",
-    url: "/perfumes/little_flower.png"
+    filename: "little_flower.png"
   },
   {
-    name: "Casa Blanca Bo",
-    brand: "Unknown / Indie",
+    name: "Casa Blanca",
+    brand: "House of Bo",
     category: "Floral",
     description: "A bright and cheerful fragrance inspired by blooming Casablanca lilies. Juicy and green, ideal for uplifting the spirit.",
     style: "Bright, Floral, Green",
     notes: ["Casablanca Lily", "Green Notes", "Citrus"],
     occasion: "Daytime, Casual",
-    url: "/perfumes/casa_blanca_bo.png"
+    filename: "casa_blanca_bo.png"
   },
   {
     name: "Phlur Father Figure",
@@ -169,7 +169,7 @@ Perfume.create!([
     style: "Clean, Woody, Aromatic",
     notes: ["Cedar", "Vetiver", "Bergamot", "Aromatic Herbs"],
     occasion: "Everyday, Office",
-    url: "/perfumes/father_figure.png"
+    filename: "father_figure.png"
   },
   {
     name: "Tabacco Toscano Eau de Cologne",
@@ -179,7 +179,7 @@ Perfume.create!([
     style: "Warm, Oriental, Woody",
     notes: ["Tobacco", "Leather", "Spices", "Wood"],
     occasion: "Evening, Formal",
-    url: "/perfumes/tabacco_toscano.png"
+    filename: "tabacco_toscano.png"
   },
   {
     name: "Liis - Into This World",
@@ -189,7 +189,7 @@ Perfume.create!([
     style: "Fruity, Floral, Dreamy",
     notes: ["Peach", "Rose", "Lychee", "Jasmine"],
     occasion: "Casual, Daytime",
-    url: "/perfumes/liis_into_this_world.png"
+    filename: "liis_into_this_world.png"
   },
   {
     name: "Rock River Melody",
@@ -199,7 +199,7 @@ Perfume.create!([
     style: "Woody, Floral, Serene",
     notes: ["Cedar", "Sandalwood", "Jasmine", "Lily"],
     occasion: "Daytime, Nature Walks",
-    url: "/perfumes/rock_river_melody.png"
+    filename: "rock_river_melody.png"
   },
   {
     name: "White Rice",
@@ -209,7 +209,7 @@ Perfume.create!([
     style: "Minimalist, Green, Fresh",
     notes: ["Rice", "Green Leaves", "Light Musk"],
     occasion: "Everyday, Casual",
-    url: "/perfumes/white_rice.png"
+    filename: "white_rice.png"
   },
   {
     name: "Sand and Skin",
@@ -219,7 +219,7 @@ Perfume.create!([
     style: "Fresh, Woody, Aquatic",
     notes: ["Sea Notes", "Sand Accord", "Driftwood"],
     occasion: "Summer, Beach",
-    url: "/perfumes/sand_and_skin.png"
+    filename: "sand_and_skin.png"
   },
   {
     name: "Hotel Cotton",
@@ -229,7 +229,7 @@ Perfume.create!([
     style: "Soft, Floral, Cozy",
     notes: ["Cotton Blossom", "White Flowers", "Powdery Musk"],
     occasion: "Daytime, Casual",
-    url: "/perfumes/hotel_cotton.png"
+    filename: "hotel_cotton.png"
   },
   {
     name: "Delulu",
@@ -239,7 +239,7 @@ Perfume.create!([
     style: "Playful, Sweet, Floral",
     notes: ["Rose", "Vanilla", "Amber", "Musk"],
     occasion: "Evening, Casual",
-    url: "/perfumes/delulu.png"
+    filename: "delulu.png"
   },
   {
     name: "5 o'clock Gingembre",
@@ -249,7 +249,7 @@ Perfume.create!([
     style: "Spicy, Woody, Elegant",
     notes: ["Ginger", "Woods", "Citrus", "Musk"],
     occasion: "Afternoon, Elegant",
-    url: "/perfumes/5_oclock_gingembre.png"
+    filename: "5_oclock_gingembre.png"
   }
 ])
 

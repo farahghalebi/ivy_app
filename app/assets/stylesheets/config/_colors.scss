@@ -10,12 +10,29 @@ $gray: #0E0000;
 $light-gray: #F4F4F4;
 $purple: #b19cd9;
 
+// Example colors based on your request
+$berry: #600f27;
+$sage: #9caf88;
+$royal-blue: #2a4d9b;
+$lilac: #c8a2c8;
+$taupe: #c2ab99;
+
+// Optional: other utility colors
+$white: #ffffff;
+$black: #000000;
+$light-gray: #f4f4f4;
+
 @import "bootstrap/functions";
 @import "bootstrap/variables";
+
 
 $theme-colors: map-merge(
   $theme-colors,
   (
-    "purple": $purple
+    "berry": $berry,
+    "sage": $sage,
+    "royal-blue": $royal-blue,
+    "lilac": $lilac,
+    "taupe": $taupe
   )
 );

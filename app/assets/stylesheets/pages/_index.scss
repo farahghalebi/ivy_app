@@ -1,2 +1,68 @@
-// Import page-specific CSS files here.
-@import "home";
+// ============================
+// Perfumes Index Page Cards
+// ============================
+
+h1 {
+  font-family: $headers-font;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: $berry;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+.bg {
+  // background-image: url('https://images.unsplash.com/photo-1747947580042-896d885d54b3?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  // background-size: cover;
+  // background-position: center;
+  // min-height: 100vh;       // full viewport
+  background-color: #dfdccb;
+}
+
+
+.card.perfume-card {
+  position: relative;
+  width: 280px;        // fixed card width
+  height: 320px;       // fixed card height
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  padding-top: 1rem;
+
+  // Paper background square
+  .card-bg {
+    width: 230px;             // fixed square size
+    height: 230px;
+    background-image: url('https://plus.unsplash.com/premium_photo-1672944876342-4090164e1c04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFwZXJ8ZW58MHx8MHx8fDA%3D');
+    background-size: cover;    // fill the square
+    background-position: center; // center the portion of image
+    background-repeat: no-repeat;
+    margin-top: 1rem;           // center horizontally
+    margin-bottom: 0.5rem auto;
+    z-index: 0;
+  }
+
+  .card-body {
+    font-size: 0.875rem;
+    text-align: center;
+    margin-top: 0.5rem;        // space below paper square
+    z-index: 1;
+
+    .card-title {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-subtitle {
+      font-style: italic;
+      color: #6c757d;
+    }
+  }
+}
