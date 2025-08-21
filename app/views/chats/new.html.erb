@@ -1,6 +1,6 @@
 <h1>New Chat</h1>
 
-<%= simple_form_for @chat do |f| %>
+<%= simple_form_for [@perfume, @chat] do |f| %>
   <%= f.input :title, placeholder: "whats the title of the chat", required: true %>
   <%= f.button :submit, 'Create chat', class: 'btn btn-primary' %>
 <% end %>

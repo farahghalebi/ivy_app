@@ -1,5 +1,6 @@
 # app/models/perfume.rb
 class Perfume < ApplicationRecord
+  has_many :chats, dependent: :destroy
   serialize :notes, Array, coder: JSON
   # CATEGORIES = [
   #   "Parfum",
@@ -10,7 +11,6 @@ class Perfume < ApplicationRecord
   #   "Eau Fraîche",
   #   "Body Mist"
   # ].freeze
-
   validates :name, presence: true
   # validates :category, inclusion: { in: CATEGORIES }
   validates :category, presence: true

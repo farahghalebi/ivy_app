@@ -5,6 +5,7 @@ class ChatsController < ApplicationController
   end
 
   def new
+    @perfume = Perfume.find(params[:perfume_id])
     @chat = Chat.new
   end
 end
