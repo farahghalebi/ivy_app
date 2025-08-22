@@ -2,78 +2,39 @@
   background-color: $sage;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;         // layout children in column
-  justify-content: center;        // center vertically
-  align-items: center;            // center horizontally
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 4rem 2rem;
   font-family: $font-base;
 
   .perfume-container {
     display: flex;
-    flex-wrap: wrap;              // wrap on small screens
+    flex-wrap: wrap;
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
-    gap: 2rem;
-    background-color: $berry;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    position: relative;           // for absolute children
+    position: relative;
 
-    // IMAGE WRAPPER
-    .perfume-image-wrapper {
-      flex: 1 1 40%;              // 40% width of container
-      min-width: 300px;           // mobile fallback
-      position: relative;         // for absolute positioning inside
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .perfume-background {
-        background-color: $berry;
-        position: absolute;       // behind the image
-        top: 50%;
-        left: 50%;
-        width: 280px;
-        height: 280px;
-        transform: translate(-50%, -50%);
-        z-index: 0;               // behind image
-      }
-
-      .perfume-image {
-        position: absolute;       // absolute over background
-        top: 50%;
-        left: 50%;
-        width: 280px;
-        height: 280px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-
-        img {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-      }
-    }
-
-    // INFO SECTION
+    // INFO SECTION (LINKS)
     .perfume-info {
-      flex: 1 1 60%;              // 60% width of container
-      padding: 2rem;
+      flex: 1 1 50%;
+      background-image: url('https://plus.unsplash.com/premium_photo-1675695700239-44153e6bf430?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      padding: 4rem;
       display: flex;
-      flex-direction: column;     // stack text vertically
-      justify-content: center;     // vertical center relative to container
+      flex-direction: column;
+      justify-content: center;
+      color: $moss;
 
       h1 {
         font-family: $font-accent;
         font-weight: 700;
         font-size: 2.5rem;
         margin-bottom: 1rem;
+        color: $royal-blue;
       }
 
       .category {
@@ -90,12 +51,57 @@
         margin-bottom: 0.5rem;
       }
     }
-  }
+
+    // IMAGE SECTION (RECHTS)
+    .perfume-image-wrapper {
+      flex: 1 1 50%;             // rechts 50%
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 300px;
+
+      // Hintergrundbild rechts
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1728738228235-664f41f9a5d3?q=80&w=1355&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); // hier dein Bild
+        background-size: cover;
+        background-position: center;
+        z-index: 0;               // hinter dem Produktbild
+      }
+
+      .perfume-background {
+        display: none;            // alten farbigen Kreis entfernen
+      }
+
+      .perfume-image {
+        position: relative;       // über Hintergrund
+        width: 400px;
+        height: 400px;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
 
   // Sage button styling
-  .btn-sage {
-    background-color: $sage;
-    color: $white;
+  .btn-berry {
+    background-color: $berry;
+    color: $ivory;
+    margin-top: 2rem;
     font-family: 'Playfair Display', serif;
     font-weight: 300;
     border-radius: 12px;
@@ -106,12 +112,12 @@
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-      background-color: darken($sage, 10%);
+      background-color: darken($berry, 10%);
       box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
 
     &:active {
-      background-color: darken($sage, 15%);
+      background-color: darken($berry, 15%);
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
   }
@@ -121,8 +127,7 @@
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background-color: $sage;
-    color: $white;
+    background-color: $taupe;
     font-size: 3rem;
     border-radius: 50%;
     width: 3.5rem;
@@ -134,17 +139,17 @@
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     line-height: 1;
-    background: none;
     border: none;
 
     &:hover {
-      background-color: darken($sage, 10%);
+      background-color: darken($moss, 10%);
       box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
 
     &:active {
-      background-color: darken($sage, 15%);
+      background-color: darken($moss, 15%);
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
   }
+}
 }

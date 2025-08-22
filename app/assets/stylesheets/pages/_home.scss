@@ -25,6 +25,7 @@
   }
 
   h1 {
+    color: $ivory;
     font-family: $font-accent; // Accent-Font
     font-weight: 700;
     margin-bottom: 1rem;
@@ -32,6 +33,7 @@
   }
 
   h2, p {
+    color: $ivory;
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
