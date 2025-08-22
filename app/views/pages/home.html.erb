@@ -13,7 +13,7 @@
         </p>
 
         <% if user_signed_in? %>
-          <%= link_to "Your Collection", "#", class: "btn btn-primary btn-lg" %>
+          <%= link_to "Your Collection", perfumes_path, class: "btn btn-sage btn-lg me-2" %>
         <% else %>
           <%= link_to "Let's start", new_user_registration_path, class: "btn btn-sage btn-lg me-2" %>
         <% end %>
