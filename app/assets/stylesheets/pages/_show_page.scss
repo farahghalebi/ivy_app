@@ -2,95 +2,140 @@
   background-color: $sage;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;         // layout children in column
+  justify-content: center;        // center vertically
+  align-items: center;            // center horizontally
   padding: 4rem 2rem;
   font-family: $font-base;
 
   .perfume-container {
     display: flex;
-    flex-wrap: wrap;             // für mobile Geräte
-    max-width: 1200px;
+    flex-wrap: wrap;              // wrap on small screens
+    max-width: 900px;
     width: 100%;
-    background-color: $ivory;
+    margin: 0 auto;
+    gap: 2rem;
+    background-color: $berry;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    position: relative;           // for absolute children
 
-    .perfume-image {
-      flex: 1 1 40%;             // 40% der Breite
-      min-width: 300px;          // mobile fallback
-      background-color: #f8f8f8;
+    // IMAGE WRAPPER
+    .perfume-image-wrapper {
+      flex: 1 1 40%;              // 40% width of container
+      min-width: 300px;           // mobile fallback
+      position: relative;         // for absolute positioning inside
       display: flex;
       justify-content: center;
       align-items: center;
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
+
+      .perfume-background {
+        background-color: $berry;
+        position: absolute;       // behind the image
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        transform: translate(-50%, -50%);
+        z-index: 0;               // behind image
+      }
+
+      .perfume-image {
+        position: absolute;       // absolute over background
+        top: 50%;
+        left: 50%;
+        width: 280px;
+        height: 280px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
       }
     }
 
+    // INFO SECTION
     .perfume-info {
-      flex: 1 1 60%;             // 60% der Breite
+      flex: 1 1 60%;              // 60% width of container
       padding: 2rem;
+      display: flex;
+      flex-direction: column;     // stack text vertically
+      justify-content: center;     // vertical center relative to container
+
       h1 {
         font-family: $font-accent;
         font-weight: 700;
         font-size: 2.5rem;
         margin-bottom: 1rem;
       }
+
       .category {
         font-weight: bold;
         margin-bottom: 0.5rem;
       }
+
       .description {
         font-style: italic;
         margin-bottom: 1rem;
       }
+
       .style, .notes, .occasion {
         margin-bottom: 0.5rem;
       }
     }
   }
 
+  // Sage button styling
   .btn-sage {
-  background-color: $sage;
-  color: $white;
-  font-family: 'Playfair Display', serif;
-  font-weight: 300;
-  border-radius: 12px;
-  padding: 0.75rem 1.5rem;
-  margin-left: 0.5rem;
-
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    background-color: darken($sage, 10%);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  }
-
-  &:active {
-    background-color: darken($sage, 15%);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
-  }
-}
-
-  .btn-chat {
     background-color: $sage;
     color: $white;
-    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    margin-left: 0.5rem;
+
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      background-color: darken($sage, 10%);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    &:active {
+      background-color: darken($sage, 15%);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+  }
+
+  // Chat button
+  .btn-chat {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $sage;
+    color: $white;
+    font-size: 3rem;
     border-radius: 50%;
     width: 3.5rem;
     height: 3.5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;         // center vertically
+    justify-content: center;     // center horizontally
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    line-height: 1;
+    background: none;
+    border: none;
 
     &:hover {
       background-color: darken($sage, 10%);
