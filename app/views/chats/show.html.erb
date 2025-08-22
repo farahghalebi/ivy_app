@@ -1,32 +1,41 @@
-<h1>Chat about <%= @chat.perfume.name %></h1>
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg border-0 w-100" style="max-width: 700px;">
+    <div class="card-body">
 
-<div id="chat_title">
-  <h1><%= @chat.title %></h1>
-</div>
+      <h1>Chat about - <%= @chat.perfume.name %></h1>
 
-<div id="messages">
-  <% @chat.messages.each do |message| %>
-    <% if message.role == "user" %>
-      <div class="d-flex justify-content-end mb-2">
-        <div class="bg-white px-3 pb-0 pt-3 rounded-pill">
-          <p><%= message.content %></p>
-        </div>
+      <div id="chat_title">
+        <h1><%= @chat.title %></h1>
       </div>
-    <% elsif message.role == "assistant" %>
-      <div class="d-flex justify-content-start mb-5">
-        <div class="px-3 pb-0 pt-3">
-          <p><%= message.content %></p>
-        </div>
+
+      <div id="messages">
+        <% @chat.messages.each do |message| %>
+          <% if message.role == "user" %>
+            <div class="d-flex justify-content-end mb-2">
+              <div class="bg-white px-3 pb-0 pt-3 rounded-pill">
+                <p><%= message.content %></p>
+              </div>
+            </div>
+          <% elsif message.role == "assistant" %>
+            <div class="d-flex justify-content-start mb-5">
+              <div class="px-3 pb-0 pt-3">
+                <p><%= message.content %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
-  <% end %>
-</div>
 
-<div id="new_message">
-  <%= simple_form_for [@chat, @message] do |f| %>
-    <%= f.input :content, placeholder: "Ask a question", required: true, label: false %>
-    <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+      <div id="new_message">
+        <%= simple_form_for [@chat, @message] do |f| %>
+          <%= f.input :content, placeholder: "Ask a question", required: true, label: false %>
+          <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary btn-lg' %>
+        <% end %>
+      </div>
+      <div class="mt-3">
+        <%= link_to "← Back", perfume_chats_path(@chat.perfume), class: "btn btn-secondary" %>
+      </div>
 
-<%= link_to "← Back", perfume_chats_path(@chat.perfume), class: "btn btn-secondary mt-3 ms-2"  %>
+    </div>
+  </div>
+</div>
