@@ -1,25 +1,24 @@
 /* app/assets/stylesheets/components/_navbar.scss */
-$ivy-purple: #7c3aed; // tweak to your taste
 
 .brand-logo { height: 28px; width: auto; }
 .avatar     { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
 
 /* Purple primary button */
 .btn-primary {
-  background-color: $ivy-purple;
-  border-color: $ivy-purple;
+  background-color: $sage;
+  border-color: $sage;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: darken($ivy-purple, 7%);
-  border-color: darken($ivy-purple, 7%);
+  background-color: darken($sage, 7%);
+  border-color: darken($sage, 7%);
 }
 
 /* Nice touch: highlight links on hover/active with purple */
 .nav-link:hover,
-.nav-link:focus { color: $ivy-purple !important; }
+.nav-link:focus { color: $sage !important; }
 .dropdown-item.active,
-.dropdown-item:active { background-color: $ivy-purple; }
+.dropdown-item:active { background-color: $sage; }
 
 .navbar {
   background-color: transparent !important; // removes the light gray
@@ -28,4 +27,21 @@ $ivy-purple: #7c3aed; // tweak to your taste
   padding-bottom: 0;
   margin-bottom: 0;                         // remove default bottom margin
   z-index: 10;                               // keep navbar above bg
+}
+
+.navbar .navbar-brand span {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 1.5rem; // kannst du nach Geschmack anpassen
+}
+
+// quick fix, as i dont want to disrupt this code too much. migt have to add it to a proper class later
+.navbar .nav-link,
+.navbar .dropdown-item {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300; // "light"
+}
+
+.navbar .btn {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300; // Light
 }
