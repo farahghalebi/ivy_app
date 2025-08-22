@@ -1,32 +1,40 @@
 .home-page {
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1579762715459-5a068c289fda?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg");
-  background-size: cover;       // Bild füllt Container vollständig aus
+  background: url('https://images.unsplash.com/photo-1579762715459-5a068c289fda?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;           // mindestens die volle Höhe des Viewports
-  color: white;                 // Standardfarbe für Text
+  min-height: 100vh;
 
-  // Optional: Overlay für besseren Kontrast
   .overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.4); // nur hinter dem Bild
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
     z-index: 0;
   }
 
   .container {
-    position: relative;  // Damit der Text über dem Overlay liegt
-    z-index: 1;
+    position: relative;
+    z-index: 1; // Text über Overlay
     padding-top: 5rem;
     padding-bottom: 5rem;
     text-align: center;
   }
 
-  h1, h2, p {
+  h1 {
+    font-family: $font-accent; // Accent-Font
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7); // Text besser lesbar
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+
+  h2, p {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   }
 
   .lead {
@@ -36,8 +44,8 @@
   }
 
   .btn-sage {
-    background-color: #9caf88;  // Salbeigrün
-    color: white;
+    background-color: $sage;  // Salbeigrün
+    color: $white;
     font-weight: 500;
     border-radius: 12px;
     padding: 0.75rem 1.5rem;
@@ -47,12 +55,12 @@
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-      background-color: darken(#9caf88, 10%);
+      background-color: darken($sage, 10%);
       box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
 
     &:active {
-      background-color: darken(#9caf88, 15%);
+      background-color: darken($sage, 15%);
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
     }
   }

@@ -1,18 +1,32 @@
-<div class="perfume-show">
-  <h1><%= @perfume.name %></h1>
-  <p class="category"><%= @perfume.category %></p>
-  <p class="description"><%= @perfume.description %></p>
+<div class="perfume-show-page">
+  <div class="perfume-container">
 
-  <a href="<%= @perfume.url %>" target="_blank" class="btn btn-purple mt-3">
-    More info
-  </a>
+    <!-- left: product picture wrapper -->
+    <div class="perfume-image-wrapper">
+      <div class="perfume-background"></div> <!-- optionaler Hintergrund -->
+      <div class="perfume-image">
+        <% if @perfume.photo.attached? %>
+          <%= image_tag url_for(@perfume.photo), alt: @perfume.name %>
+        <% else %>
+          <img src="<%= asset_path(@perfume.filename) %>" alt="<%= @perfume.name %>">
+        <% end %>
+      </div>
+    </div>
 
-  <%= link_to "Back to all perfumes", perfumes_path, class: "btn btn-secondary mt-3 ms-2" %>
-</div>
-<div class="d-flex justify-content-end mt-4 me-3">
-  <% if @chat.nil? %>
-    <%= link_to "?", new_perfume_chat_path(@perfume), class: "btn btn-chat" %>
-  <% else %>
-    <%= link_to "?", perfume_chat_path(@perfume, @chat), class: "btn btn-chat" %>
-  <% end %>
+    <!-- right side info div -->
+    <div class="perfume-info">
+      <h1><%= @perfume.name %></h1>
+      <h2><%= @perfume.brand %></h2>
+      <p class="category"><%= @perfume.category %></p>
+      <p class="description"><%= @perfume.description %></p>
+      <p class="style"><strong>Style:</strong> <%= @perfume.style %></p>
+      <p class="notes"><strong>Notes:</strong> <%= @perfume.notes.join(", ") %></p>
+      <p class="occasion"><strong>Occasion:</strong> <%= @perfume.occasion %></p>
+
+      <%= link_to "#", chat_path(@chat), class: "btn btn-chat" do %>
+        🐧
+      <% end %>
+    </div>
+
+  </div>
 </div>
