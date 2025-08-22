@@ -1,2 +1,112 @@
-// Import page-specific CSS files here.
-@import "home";
+// ============================
+// Perfumes Index Page Styles
+// ============================
+
+.index-page {
+  position: relative;                     // for overlay positioning
+  background-image: url('https://plus.unsplash.com/premium_photo-1675695700239-44153e6bf430?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); // paper background
+  // background-size: cover;                 // for now the cards cover the repetition
+  background-position: center;
+  min-height: 100vh;                      // full viewport height
+  font-family: $font-base;                // main body font
+  color: $black;
+
+  .overlay {
+    position: absolute;                   // overlay behind content
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3); // semi-transparent overlay for contrast
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;                   // container above overlay
+    z-index: 1;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-title {
+    font-family: $font-accent;            // special header font
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    color: $moss;
+    margin-bottom: 2rem;
+  }
+
+  .card.perfume-card {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $ivory;
+    padding-top: 1rem;
+
+    .card-bg {
+      width: 230px;
+      height: 230px;
+      background-image: url('https://plus.unsplash.com/premium_photo-1667239027813-fc2718d88f2d?q=80&w=657&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); // paper square
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 1rem auto 0 auto;
+      position: relative;
+      z-index: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.4);     // overlay behind perfume image
+        z-index: 0;
+      }
+    }
+
+    .image-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+
+      pointer-events: none;              // allow the entire card to be clickable
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .card-body {
+      position: relative;                 // above overlay
+      font-size: 0.875rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      z-index: 1;
+
+      .card-title {
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
+
+      .card-subtitle {
+        font-style: italic;
+        color: #6c757d;
+      }
+    }
+  }
+}

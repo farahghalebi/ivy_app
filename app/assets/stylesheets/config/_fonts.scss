@@ -1,9 +1,11 @@
-// Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// app/assets/stylesheets/config/_fonts.scss
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;700&display=swap');
 
-// Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Work Sans', sans-serif;
+$font-base: $body-font; // alias for consistency - not a good solution have to fix later
+$headers-font: 'Playfair Display', serif;
+$font-accent: 'Cedarville Cursive', cursive;
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

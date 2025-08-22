@@ -20,3 +20,12 @@ $ivy-purple: #7c3aed; // tweak to your taste
 .nav-link:focus { color: $ivy-purple !important; }
 .dropdown-item.active,
 .dropdown-item:active { background-color: $ivy-purple; }
+
+.navbar {
+  background-color: transparent !important; // removes the light gray
+  border-bottom: none !important;           // removes 1px border
+  padding-top: 0;                           // optional: reduce vertical spacing
+  padding-bottom: 0;
+  margin-bottom: 0;                         // remove default bottom margin
+  z-index: 10;                               // keep navbar above bg
+}
