@@ -53,6 +53,7 @@ gem "sassc-rails"
 # adds gem "device"
 gem 'devise'
 
+gem 'cloudinary'
 
 gem "ruby_llm"
 
