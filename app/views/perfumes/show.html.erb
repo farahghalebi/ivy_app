@@ -23,7 +23,10 @@
       <p class="notes"><strong>Notes:</strong> <%= @perfume.notes.join(", ") %></p>
       <p class="occasion"><strong>Occasion:</strong> <%= @perfume.occasion %></p>
 
-      <%= link_to "#", chat_path(@chat), class: "btn btn-chat" do %>
+
+
+      <%= link_to "Back to Perfumes", perfumes_path, class: "btn btn-berry" %>
+      <%= link_to new_perfume_chat_path(@perfume), class: "btn btn-chat" do %>
         🐧
       <% end %>
     </div>
